@@ -1,0 +1,2 @@
+module AllagesHelper
+end
