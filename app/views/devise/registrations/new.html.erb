@@ -4,7 +4,7 @@
         <h2 class="page-heading">ユーザー新規登録</h2>
      
         <%= form_with model: @user , url: user_registration_path, local: true do |f| %>
-         <%#= render 'shared/error_messages', model: f.object %>
+         <%= render 'shared/error_messages', model: f.object %>
         <div class="field">
           <%= f.label :email, "email" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -27,7 +27,7 @@
 
         <div class="field">
           <%= f.label :height, "user-height" %><br />
-          <%= f.text_area :heigt %>
+          <%= f.text_area :height %>
         </div>
          <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
