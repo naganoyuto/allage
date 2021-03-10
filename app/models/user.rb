@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   with_options presence: true do
     validates :nickname
-    validates :height, numericality: {only_integer: greater_than: 1, less_than: 999, message: 'には3桁以内かつ半角数字で入力してください'}
+    validates :height
   end
 end
