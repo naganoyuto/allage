@@ -1,0 +1,2 @@
+class PostTagConnect < ApplicationRecord
+end
