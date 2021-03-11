@@ -10,7 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_232514) do
+ActiveRecord::Schema.define(version: 2021_03_11_005716) do
+
+  create_table "post_tag_connects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_tag_connects_on_post_id"
+    t.index ["tag_id"], name: "index_post_tag_connects_on_tag_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.text "tops_shop", null: false
+    t.text "tops_prefecture", null: false
+    t.text "tops_brand", null: false
+    t.string "tops_price", null: false
+    t.string "pants_shop", null: false
+    t.integer "pants_prefecture_id", null: false
+    t.string "pants_brand", null: false
+    t.integer "pants_price", null: false
+    t.string "shoes_shop", null: false
+    t.integer "shoes_prefecture_id", null: false
+    t.string "shoes_brand", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +58,5 @@ ActiveRecord::Schema.define(version: 2021_03_09_232514) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "post_tag_connects", "posts"
 end
