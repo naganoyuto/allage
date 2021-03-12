@@ -1,0 +1,90 @@
+.card_title{
+  background-color: black;
+  width: 100vw;
+  height: 60px;
+ padding: 22px ;
+ text-align: center;
+}
+h2{
+  font-size: 30px;
+  color: white;
+}
+.card{
+  width: 100vw;
+  background-color: grey;
+  display:  flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card_photo{
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-color:antiquewhite; 
+  border: 1px solid #fff;
+}
+.card_photo p{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 30px;
+}
+.card_img{
+  border: 1px solid white;
+   width: 400px;
+   height: 380px;
+}
+.card_text{
+  border: 1px sold black;
+  display: block;
+}
+
+
+/* フォーム周り */
+.form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.page-heading{
+  color: black;
+}
+
+.form__text {
+  width: 50%;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.actions{
+  margin-bottom: 40px;
+}
+
+.form__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #87CEFA;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.form__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+.select-box {
+  height: 30px;
+  width: 20%;
+  background-color: #f5f5f5;
+  padding-left: 20px;
+}
