@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = Post.new(post_params)
     if @post.save
       redirect_to root_path
@@ -17,6 +16,14 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
 
   private
 

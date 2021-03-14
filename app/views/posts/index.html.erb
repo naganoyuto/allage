@@ -1,8 +1,36 @@
+
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+           <h1>〜Allage〜</h1>
+          </div>
+
+          <%if user_signed_in? %>
+            <div class="nav__right"> 
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav__btn"%> 
+              <%= link_to "Allager",new_post_path, class: "nav__btn" %>
+              
+            </div>
+          <% else %>
+            <div class="nav__right">
+              <%= link_to "ログイン",  new_user_session_path, class: "nav__btn" %>
+              <%= link_to "新規登録", new_user_registration_path, class: "nav__btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+
 <div class="card_title">
   <h2><span class="fas fa-crown"></span>人気コーデランキング<span class="fas fa-crown"></span></h2>
 </div>
-<%= render partial: 'post', collection: @posts%>
-
+  <div class="card">
+      <%= render partial: 'post', collection: @posts%>
+  </div>
 
  <div class="card">
     <%if @posts.length == 0%>
@@ -44,10 +72,14 @@
       </div>
     <% end %>
  </div>
+    <footer class="footer">
+      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+    </footer>
 
 
 
 
 
-  
+
+   
 

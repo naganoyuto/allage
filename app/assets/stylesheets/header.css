@@ -1,10 +1,15 @@
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+ background-image:url("black-1072366_1280.webp");
   margin-bottom: 48px;
   padding: 20px 0;
 
+}
+.header h1{
+  color:#fff;
+  font-family: serif, Times;
+  font-size: 40px;
 }
 .inner {
   width: 1024px;
@@ -22,14 +27,14 @@
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #fff;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 2px #fff solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #fff;
 }
