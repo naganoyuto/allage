@@ -1,0 +1,105 @@
+<%= render partial: 'shared/header'%>
+<div class = "show_main">
+      <div class = "show_inner">
+
+            <div class = "show_photo">
+              <%= image_tag @post.image, class: "show_img"%>
+            </div>
+       </div>
+</div>
+    <div class = "like_main">
+      <div class = "showlike">
+      </div>
+    </div>
+    <div class= "inf_main">
+      <div class = "show_inf">
+          <div class = "inf_post">
+            <%= @post.text%>
+          </div>
+           <div class="inf_title">
+          <p>トップス</p>
+          </div>
+           <div class="inf_sub_title">
+             <p>購入先店舗（トップス）</p>
+           </div>
+          <div class="inf_post">  
+            <%= @post.tops_shop%>
+          <div>
+           <div class="inf_sub_title">
+             <p>購入先店舗エリア</p>
+           </div>
+          <div class="inf_post">
+            <%= @post.tops_prefecture%>
+          <div>
+          <div class="inf_sub_title">
+             <p>ブランド</p>
+           </div>
+          <div class="inf_post">
+            <%= @post.tops_brand%>
+          <div>
+           <div class="inf_sub_title">
+             <p>価格</p>
+           </div>
+           <div class="inf_post">
+            <%= @post.tops_price%>
+          <div>      
+
+          <div class="inf_title">
+          <p>ボトムス</p>
+          </div>
+            <div class="inf_sub_title">
+             <p>購入先店舗</p>
+           </div>
+          <div class="inf_post">
+           <%= @post.pants_shop%>
+          </div>
+           <div class="inf_sub_title">
+             <p>購入先店舗エリア</p>
+           </div>
+          <div class="inf_post">
+           <%= @post.pants_shop%>
+          </div>
+            <div class="inf_sub_title">
+              <p>ブランド</p>
+           </div>
+           <div class="inf_post">
+             <%= @post.pants_brand%>
+           </div>
+           <div class="inf_sub_title">
+             <p>価格</p>
+           </div>
+            <div class="inf_post">
+             <%= @post.pants_price%>
+           </div>
+
+            <div class="inf_title">
+            <p>シューズ</p>
+            </div>
+           <div class="inf_sub_title">
+             <p>購入先店舗</p>
+           </div>
+            <div class="inf_post">
+             <%= @post.shoes_shop%>
+           </div>
+           <div class="inf_sub_title">
+             <p>購入先店舗エリア</p>
+           </div>
+            <div class="inf_post">
+             <%= @post.shoes_prefecture_id%>
+           </div>
+           <div class="inf_sub_title">
+             <p>ブランド</p>
+           </div>
+            <div class="inf_post">
+             <%= @post.shoes_brand%>
+           </div>
+            <div class="inf_sub_title">
+             <p>価格</p>
+           </div>
+            <div class="inf_post">
+             <%= @post.shoes_price%>
+           </div>
+
+          
+      </div>
+    </div>
