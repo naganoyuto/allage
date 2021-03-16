@@ -18,7 +18,7 @@
 
     <div class="field">
       <p>※必須</p>
-      <%= f.label :tops_prefecture, "各購入先店舗店エリア（都道府県）"%><br />
+      <%= f.label :tops_prefecture, "各購入先店舗店エリア（都道府県or通販サイト）"%><br />
       <%= f.text_field :tops_prefecture, class: 'form_text' %>
     </div>
 
@@ -41,7 +41,7 @@
 
     <div class="field">
       <p>※必須</p>
-      <p>購入店舗エリア（都道府県）</p>
+      <p>購入店舗エリア（都道府県or通販サイト）</p>
       <%= f.collection_select(:pants_prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
     </div>
 
@@ -65,7 +65,7 @@
 
     <div class="field">
       <p>※必須</p>
-      <p>購入店舗エリア（都道府県）</p>
+      <p>購入店舗エリア（都道府県or通販サイト）</p>
       <%= f.collection_select(:shoes_prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
     </div>
 

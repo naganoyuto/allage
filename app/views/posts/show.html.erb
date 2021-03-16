@@ -1,11 +1,13 @@
 <%= render partial: 'shared/header'%>
 <div class = "show_main">
-      <div class = "show_inner">
-
-            <div class = "show_photo">
-              <%= image_tag @post.image, class: "show_img"%>
-            </div>
-       </div>
+    <div class = "show_inner">
+        <div class = "show_mange">
+          <%= link_to "編集する", edit_post_path(@post.id),class: "prototype_btn"%>
+        </div>
+        <div class = "show_photo">
+            <%= image_tag @post.image, class: "show_img"%>
+         </div>
+    </div>
 </div>
     <div class = "like_main">
       <div class = "showlike">
