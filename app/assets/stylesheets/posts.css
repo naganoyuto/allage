@@ -59,10 +59,12 @@ h2{
 
 .field{
   margin: 10px 0;
+  text-align: center;
 }
 
 .actions{
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .form__btn{
