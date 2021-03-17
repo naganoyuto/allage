@@ -27,13 +27,22 @@
 <div class="card_title">
   <h2><span class="fas fa-crown"></span>人気コーデランキング<span class="fas fa-crown"></span></h2>
 </div>
-<% @posts.each do |post|%>
-  <div class="card">
+<div class="card">
+    <% @posts.each do |post|%>
     <div class="se_photo">
-     <%= link_to image_tag(post.image, class: 'se_img' ), post_path(post.id)%>
-     <%= link_to %>
+      <%= link_to image_tag(post.image, class: 'se_img' ), post_path(post.id)%>
+      <div class="se_tag">
+            <% post.tags.each do |tag|%>
+              <span>
+                <%= link_to "# #{tag.tag_name}", tag_posts_path(tag_id: tag.id)%>
+              </span>
+            <% end %>
+      </div>
+      <a><span class="far fa-heart"></span></a>
       <p>1</p>
-   </div>
-  <% end %>
-  </div>
+    </div>
+
+    <% end %>
+</div>
+
 <%= render partial: 'shared/footer'%>

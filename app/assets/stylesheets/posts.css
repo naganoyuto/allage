@@ -34,7 +34,7 @@ h2{
 .card_img{
   border: 1px white solid;
   width: 400px;
-  height: 400px;
+  height: 380px;
 }
 .card_text{
   border: 1px sold black;
@@ -171,7 +171,6 @@ h2{
   position: relative;
   background-color:cornsilk; 
   border: 1px solid white;
-
 }
 
 .se_photo p{
@@ -185,7 +184,10 @@ h2{
 .se_img{
   border: 1px solid white;
   width: 60vw;
-  height: 80vh;
+  height: 74vh;
   border: 1px white;
 }
 
+.se_tag{
+  border: 1px white solid;
+}
