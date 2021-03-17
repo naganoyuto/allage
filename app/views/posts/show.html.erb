@@ -1,17 +1,24 @@
 <%= render partial: 'shared/header'%>
-<div class = "show_main">
-    <div class = "show_inner">
-          <div class ="more_inner">
-            <div class = "show_photo">
-                 <%= image_tag @post.image, class: "show_img"%>
-            </div>
-            <a><span class="far fa-heart"></span></a>
-            <div class = "show_mange">
-              <%= link_to "編集", edit_post_path(@post.id),class: "post_btn"%>
-              <%= link_to "消去", post_path(@post.id), method: :delete, class: "post_btn"%>
-            </div>
-          </div>
-     </div>
+<div class="show_main">
+  <div class="show_inner">
+    <div class="more_inner">
+      <div class="show_photo">
+        <%= image_tag @post.image, class: "show_img"%>
+      </div>
+      <div class="post_tag">
+        <%@post.tags.each do |t| %>
+          <span>
+            <%= link_to "# #{t.tag_name}", tag_posts_path(tag_id: t.id)%>
+          </span>
+        <%end%>
+      </div>
+      <a><span class="far fa-heart"></span></a>
+      <div class="show_manage">
+         <%= link_to "編集", edit_post_path(@post.id),class: "post_btn"%>
+         <%= link_to "消去", post_path(@post.id), method: :delete, class: "post_btn"%>
+      </div>
+    </div>
+  </div>
 </div>
 <div class= "inf_main">
       <div class = "show_inf">
