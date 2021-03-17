@@ -80,6 +80,12 @@
       <%= f.text_field :shoes_price%>
     </div>
 
+    <div class= "field">
+      <%= f.label :tag_name, "スペースを入力することで複数のタグをつけることができます"%><br />
+      <%= f.label :tag_name, "例：春コーデ 綺麗めコーデ ストリートファッション"%><br />
+      <%= f.text_field :tag_name%>
+    </div>
+
 
     <div class="actions">
       <%= f.submit "保存する", class: 'form_btn'%>
