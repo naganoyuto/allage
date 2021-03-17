@@ -23,7 +23,6 @@ h2{
   height: 400px;
   position: relative;
   background-color:cornsilk; 
-  border: 1px solid white;
 }
 .card_photo p{
   position: absolute;
@@ -33,10 +32,9 @@ h2{
   font-size: 30px;
 }
 .card_img{
-  border: 1px solid white;
+  border: 1px white solid;
   width: 400px;
-  height: 380px;
-  border: 1px white;
+  height: 400px;
 }
 .card_text{
   border: 1px sold black;
@@ -187,7 +185,7 @@ h2{
 .se_img{
   border: 1px solid white;
   width: 60vw;
-  height: 77vh;
+  height: 80vh;
   border: 1px white;
 }
 
