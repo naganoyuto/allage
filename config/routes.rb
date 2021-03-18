@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :posts
   resources :tags do
-    get 'posts', to: 'posts#search'
+      get 'posts', to: 'posts#search'
   end
 end

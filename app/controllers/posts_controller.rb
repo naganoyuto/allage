@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!,except: [:index,:show]
+  before_action :set_q, only: [:index, :search]
   def index 
    @tag_list = Tag.all
    @posts = Post.includes(:user)
@@ -51,12 +52,17 @@ class PostsController < ApplicationController
      @tag_list = Tag.all
      @tag = Tag.find(params[:tag_id])
      @posts = @tag.posts.all
+     @results = @q.result
   end
 
   private
 
   def post_params
     params.require(:post).permit(:text, :tops_shop, :tops_prefecture, :tops_brand, :tops_price, :pants_shop, :pants_prefecture_id, :pants_brand, :pants_price, :shoes_shop, :shoes_prefecture_id, :shoes_brand, :shoes_price, :image).merge(user_id: current_user.id)
+  end
+  
+  def set_q
+    @q = Post.ransack(params[:q])
   end
 
 end
