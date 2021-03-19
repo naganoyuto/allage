@@ -41,7 +41,9 @@ h2{
   border: 1px sold black;
   display: block;
 }
-
+.heart{
+  display: flex;
+}
 
 /* フォーム周り */
 .form__wrapper{
@@ -132,6 +134,9 @@ h2{
   width: 73vw;
   height: 85vh;
   margin-top: 35px;
+}
+.like-btn{
+  display: flex;
 }
 .more{
   background-color: darkgray;

@@ -28,9 +28,11 @@
 <div class="card_title">
   <h2><span class="fas fa-crown"></span>人気コーデランキング<span class="fas fa-crown"></span></h2>
 </div>
+<%# @posts.each do |post|%>
   <div class="card">
-      <%= render partial: 'post', collection: @posts%>
+      <%= render partial: 'post', collection: @posts %>
   </div>
+  <%#end %>
 
  <div class="card">
     <%if @posts.length == 0%>
