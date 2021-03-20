@@ -10,7 +10,6 @@
             <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav__btn"%> 
               <%= link_to "Allager",new_post_path, class: "nav__btn" %>
-              
             </div>
           <% else %>
             <div class="nav__right">
@@ -28,8 +27,9 @@
 <div class="card_title">
   <h2><span class="fas fa-crown"></span>人気コーデランキング<span class="fas fa-crown"></span></h2>
 </div>
+
   <div class="card">
-      <%= render partial: 'post', collection: @posts%>
+      <%= render partial: 'post', collection: @posts %>
   </div>
 
  <div class="card">

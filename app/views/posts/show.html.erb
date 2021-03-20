@@ -12,7 +12,9 @@
           </span>
         <%end%>
       </div>
-      <a><span class="far fa-heart"></span></a>
+      <div class="like-btn">
+           <%= render partial: 'likes/like', locals: { post: @post } %>
+      </div>
       <div class="show_manage">
          <%= link_to "編集", edit_post_path(@post.id),class: "post_btn"%>
          <%= link_to "消去", post_path(@post.id), method: :delete, class: "post_btn"%>
