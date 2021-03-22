@@ -197,3 +197,6 @@ h2{
 .se_tag{
   border: 1px white solid;
 }
+.count_main{
+  display: flex;
+}
