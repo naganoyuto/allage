@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :prefecture
-  belongs_to :user
+  belongs_to :prefecture 
+  belongs_to :user 
   has_one_attached :image
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
@@ -12,13 +12,16 @@ class Post < ApplicationRecord
     validates :tops_brand
     validates :tops_price
     validates :pants_shop
-    validates :pants_prefecture_id
     validates :pants_brand
-    validates :pants_price
     validates :shoes_shop
-    validates :shoes_prefecture_id
     validates :shoes_brand
     validates :image
+    validates :pants_price
+    validates :shoes_price
+    with_options numericality: { other_than: 1 } do
+      validates :pants_prefecture_id
+      validates :shoes_prefecture_id
+    end
   end
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
