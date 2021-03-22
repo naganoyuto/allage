@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_q, only: [:index, :search]
   def index 
    @tag_list = Tag.all
-   @posts = Post.includes(:user)
+   @posts = Post.includes(:likes).sort {|a,b| b.likes.size <=> a.likes.size}
   end
 
   def new
