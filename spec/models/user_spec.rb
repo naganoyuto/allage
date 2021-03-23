@@ -13,6 +13,12 @@ RSpec.describe User, type: :model do
     end
   end
   context '新規登録できないとき' do
+    it 'imageが空では登録できない' do
+      @user.image = nil
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Image can't be blank")
+    end
+
     it 'emailが空では登録できない' do
       @user.email = ''
       @user.valid?
