@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :prefecture 
   belongs_to :user 
   has_one_attached :image
-  has_many :post_tags
+  has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
   has_many :likes, dependent: :destroy
   with_options presence: true do

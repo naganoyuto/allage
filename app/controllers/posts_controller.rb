@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!,except: [:index]
+  before_action :authenticate_user!,except: [:index, :show]
   before_action :set_q, only: [:index, :search]
+  before_action :set_already, only: [:show], if: :user_signed_in?
   def index 
    @tag_list = Tag.all
    @posts = Post.includes(:likes).sort {|a,b| b.likes.size <=> a.likes.size}
@@ -62,6 +63,10 @@ class PostsController < ApplicationController
   
   def set_q
     @q = Post.ransack(params[:q])
+  end
+
+  def set_already
+    @already_like = Like.find_by(user_id: current_user.id, post_id: post.id)
   end
 
 end
