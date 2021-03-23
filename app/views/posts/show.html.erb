@@ -2,6 +2,7 @@
 <div class="show_main">
   <div class="show_inner">
     <div class="more_inner">
+      <%= image_tag @post.user.image, class: "user_img"%>
       <div class="show_photo">
         <%= image_tag @post.image, class: "show_img"%>
       </div>
@@ -29,6 +30,21 @@
           <div class = "inf_post">
             <%= @post.text%>
           </div>
+          <div class="inf_title">
+            <p>ユーザー情報</p>
+          </div>
+           <div class="inf_sub_title">
+             <p>ユーザー名</p>
+           </div>
+           <div class="inf_post">
+            <%= @post.user.nickname%>
+           </div>
+           <div class="inf_sub_title">
+           <p>身長</p>
+           </div>
+           <div class="inf_post">
+            <%= @post.user.height%>
+           </div>
            <div class="inf_title">
           <p>トップス</p>
           </div>

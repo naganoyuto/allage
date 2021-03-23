@@ -157,8 +157,8 @@ h2{
 }
 .show_img{
   width: 73vw;
-  height: 85vh;
-  margin-top: 35px;
+  height: 80vh;
+  margin-top: 3px;
 }
 .like-main{
   display: flex;
@@ -192,12 +192,13 @@ h2{
   background-color: black;
 }
 .inf_sub_title{
+  margin: 3px 0px 3px 0px;
   width: 80vw;
   color:black;
   background-color: lemonchiffon;
 }
 .inf_post{
-  width: 80vw;
+  margin: 3px 0px 3px 0px;
   background-color: #fff;
   border-top: 3px black solid;
 }

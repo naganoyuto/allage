@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_one_attached :image
   with_options presence: true do
+    validates :image
     validates :nickname
     validates :height, numericality: { only_integer: true, greater_than: 1, less_than: 999, message: 'には３桁以内の半角数字でお願いします' }
   end
