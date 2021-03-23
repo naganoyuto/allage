@@ -1,7 +1,7 @@
 <div class="card_photo">
     <%= link_to image_tag(post.image, class: 'card_img' ), post_path(post.id)%>
     <div class="heart">
-        <span  class="fas fa-heart"></span>
+        <span  class="fas fa-heart unlike-btn"></span>
         <div class="count">
             <%= post.likes.length%>
         </div>
