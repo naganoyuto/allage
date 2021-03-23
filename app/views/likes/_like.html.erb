@@ -1,10 +1,10 @@
-<% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
+<% if @already_like %>
   <%= link_to post_like_path(post.id, Like.find_by(user_id: current_user.id, post_id: post.id) ), method: :delete, class:"element", remote: true do %>
-   <span class="fas fa-heart"></span>
+   <span class="fas fa-heart unlike-btn"></span>
   <% end %>
 <% else %>
   <%= link_to post_likes_path(post.id), method: :post, class:"element", remote: true do%>
-    <span  class="fas fa-heart"></span>
+    <span  class="fas fa-heart like-btn"></span>
   <% end %>
 <% end %>
 <div class="count">

@@ -1,95 +1,132 @@
  <%= form_with(model: @post, local: true)do |f|%>
     <%= render 'shared/error_messages', model: f.object %>
-    <div class="field">
-      <%= f.label :image,"投稿画像" %><br />
-      <%= f.file_field :image%>
+    <div class="post_form">
+      <div class="field">
+        <div class="field_main">
+          <%= f.label :image,"投稿画像" %><br />
+        </div>
+        <%= f.file_field :image%>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <%= f.label :text, "テキスト"%><br />
+        </div> 
+        <%= f.text_field :text, class: 'form_text'%>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :tops_shop, "各トップス購入先店舗店"%><br />
+        </div>
+        <%= f.text_field :tops_shop, class: 'form_text' %>
+      </div>
+
+      <div class="field">
+       <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :tops_prefecture, "各購入先店舗店エリア（都道府県or通販サイト）"%><br />
+       </div>
+        <%= f.text_field :tops_prefecture, class: 'form_text' %>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :tops_brand, "ブランド（各トップス）"%><br />
+        </div>
+        <%= f.text_field :tops_brand, class: 'form_text' %>
+      </div>
+
+      <div class="field">
+       <div class="field_main">
+         <%= f.label :tops_price, "価格（各トップス）"%><br />
+       </div>
+        <%= f.text_field :tops_price, class: 'form_text' %>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :pants_shop, "ボトムス購入先店舗"%><br />
+        </div>
+        <%= f.text_field :pants_shop, class: 'form_st' %>
+      </div>
+
+      <div class="field">
+       <div class="field_main">
+          <p>※必須</p>
+          <p>購入店舗エリア（都道府県or通販サイト）</p>
+       </div>
+        <%= f.collection_select(:pants_prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </div>
+
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :pants_brand, "ブランド（ボトムス）"%><br />
+        </div>
+        <%= f.text_field :pants_brand, class: 'form_st'%>
+      </div>
+
+      <div class="field">
+       <div class="field_main">
+         <p>※必須</p>
+         <%= f.label :pants_price, "価格（ボトムス）"%><br />
+       </div>
+        <%= f.text_field :pants_price, class: 'form_st'%>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :shoes_shop, "シューズ購入先店舗"%><br />
+        </div>
+        <%= f.text_field :shoes_shop, class: 'form_st'%>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <p>購入店舗エリア（都道府県or通販サイト）</p>
+        </div>
+        <%= f.collection_select(:shoes_prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </div>
+
+      <div class="field">
+        <div class="field_main">
+          <p>※必須</p>
+          <%= f.label :shoes_brand, "ブランド（ブランド）"%><br />
+        </div>
+        <%= f.text_field :shoes_brand, class: 'form_st'%>
+      </div>
+
+      <div class="field">
+       <div class="field_main">
+           <p>※必須</p>
+           <%= f.label :shoes_price, "価格（シューズ）"%><br />
+       </div>
+        <%= f.text_field :shoes_price, class: 'form_st'%>
+      </div>
+
+      <div class= "field">
+        <div class="field_main">
+          <%= f.label :tag_name, "スペースを入力することで複数のタグをつけることができます"%><br />
+          <%= f.label :tag_name, "例：春コーデ 綺麗めコーデ ストリートファッション"%><br />
+        </div>
+        <%= f.text_field :tag_name, class: 'form_st'%>
+      </div>
+
+
+      <div class="actions">
+        <div class="actions_btn">
+          <%= f.submit "保存する", class: 'form_btn'%>
+        </div>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :text, "テキスト"%><br />
-      <%= f.text_field :text%>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :tops_shop, "各トップス購入先店舗店"%><br />
-      <%= f.text_field :tops_shop, class: 'form_text' %>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :tops_prefecture, "各購入先店舗店エリア（都道府県or通販サイト）"%><br />
-      <%= f.text_field :tops_prefecture, class: 'form_text' %>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :tops_brand, "ブランド（各トップス）"%><br />
-      <%= f.text_field :tops_brand, class: 'form_text' %>
-    </div>
-
-     <div class="field">
-      <%= f.label :tops_price, "価格（各トップス）"%><br />
-      <%= f.text_field :tops_price, class: 'form_text' %>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :pants_shop, "ボトムス購入先店舗"%><br />
-      <%= f.text_field :pants_shop %>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <p>購入店舗エリア（都道府県or通販サイト）</p>
-      <%= f.collection_select(:pants_prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-    </div>
-
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :pants_brand, "ブランド（ボトムス）"%><br />
-      <%= f.text_field :pants_brand%>
-    </div>
-
-    <div class="field">
-      <%= f.label :pants_price, "価格（ボトムス）"%><br />
-      <%= f.text_field :pants_price%>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :shoes_shop, "シューズ購入先店舗"%><br />
-      <%= f.text_field :shoes_shop%>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <p>購入店舗エリア（都道府県or通販サイト）</p>
-      <%= f.collection_select(:shoes_prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-    </div>
-
-    <div class="field">
-      <p>※必須</p>
-      <%= f.label :shoes_brand, "ブランド（ブランド）"%><br />
-      <%= f.text_field :shoes_brand%>
-    </div>
-
-    <div class="field">
-      <%= f.label :shoes_price, "価格（シューズ）"%><br />
-      <%= f.text_field :shoes_price%>
-    </div>
-
-    <div class= "field">
-      <%= f.label :tag_name, "スペースを入力することで複数のタグをつけることができます"%><br />
-      <%= f.label :tag_name, "例：春コーデ 綺麗めコーデ ストリートファッション"%><br />
-      <%= f.text_field :tag_name%>
-    </div>
-
-
-    <div class="actions">
-      <%= f.submit "保存する", class: 'form_btn'%>
-    </div>
 
     
 

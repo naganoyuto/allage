@@ -19,11 +19,16 @@ h2{
   margin: 0 auto;
 }
 
+
 .card_photo{
   width: 400px;
   height: 400px;
   position: relative;
   background-color:cornsilk; 
+}
+
+.card_photo a{
+  color: #e54747;
 }
 .card_photo p{
   position: absolute;
@@ -47,15 +52,16 @@ h2{
 
 /* フォーム周り */
 .form__wrapper{
+  background-color: blanchedalmond;
   min-height: calc(100vh - 161px);
 }
 
 .page-heading{
   color: black;
+  text-align: center;
 }
-
-.form__text {
-  width: 50%;
+.post_form{
+ border: 1px black solid;
 }
 
 .field{
@@ -63,10 +69,29 @@ h2{
   text-align: center;
 }
 
+.field_main{
+  background-color: wheat;
+}
+.form_text{
+  width: 100%;
+  height: 20vh;
+  background-color: cornsilk;
+}
+
+.form_st{
+  width: 100%;
+  background-color: cornsilk;
+}
+
 .actions{
   margin-bottom: 40px;
   text-align: center;
 }
+
+.select-box{
+  border: 1px black solid;
+}
+
 
 .form__btn{
   display: inline-block;
@@ -135,8 +160,15 @@ h2{
   height: 85vh;
   margin-top: 35px;
 }
-.like-btn{
+.like-main{
   display: flex;
+}
+
+.like-btn{
+  color: #808080; 
+}
+.unlike-btn{
+  color: #e54747;
 }
 .more{
   background-color: darkgray;
@@ -169,6 +201,12 @@ h2{
   background-color: #fff;
   border-top: 3px black solid;
 }
+
+
+
+
+
+
 
 /*SEARCHページ*/
 .se_photo{
