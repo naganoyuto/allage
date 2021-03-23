@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!,except: [:index, :show]
+  before_action :authenticate_user!,except: [:index, :show, :search]
   before_action :set_q, only: [:index, :search]
   before_action :set_already, only: [:show], if: :user_signed_in?
   def index 
@@ -66,7 +66,8 @@ class PostsController < ApplicationController
   end
 
   def set_already
-    @already_like = Like.find_by(user_id: current_user.id, post_id: post.id)
+    @post = Post.find(params[:id])
+    @already_like = Like.find_by(user_id: current_user.id, post_id: @post.id)
   end
 
 end
