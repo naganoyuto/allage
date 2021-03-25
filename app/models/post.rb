@@ -16,8 +16,10 @@ class Post < ApplicationRecord
     validates :shoes_shop
     validates :shoes_brand
     validates :image
-    validates :pants_price
-    validates :shoes_price
+    with_options numericality: true do
+      validates :pants_price
+      validates :shoes_price
+    end
     with_options numericality: { other_than: 1 } do
       validates :pants_prefecture_id
       validates :shoes_prefecture_id
