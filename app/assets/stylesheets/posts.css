@@ -51,6 +51,7 @@ h2{
 }
 
 /* フォーム周り */
+
 .form__wrapper{
   background-color: blanchedalmond;
   min-height: calc(100vh - 161px);
@@ -61,6 +62,7 @@ h2{
   text-align: center;
 }
 .post_form{
+ 
  border: 1px black solid;
 }
 
